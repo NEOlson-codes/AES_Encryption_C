@@ -20,6 +20,7 @@ void test_s_box(void);
 void test_global_params(void);
 void test_mult_by_x(void);
 void test_generate_key_schedule(void);
+void test_encrypt_block(void);
 
 int main(){
 
@@ -29,9 +30,9 @@ int main(){
 
 //test_mult_by_x();
 
-test_generate_key_schedule();
+//test_generate_key_schedule();
 
-
+test_encrypt_block();
 
 	return 0;
 }
@@ -67,6 +68,7 @@ void test_mult_by_x(void){
 	printf("%d",test_byte);
 }
 
+
 void test_generate_key_schedule(void){
 	set_global_params(128);
 
@@ -93,4 +95,22 @@ void test_generate_key_schedule(void){
 	printf("%d\n",key_schedule_ptr[43*4 + 1]);
 	printf("%d\n",key_schedule_ptr[43*4 + 2]);
 	printf("%d\n",key_schedule_ptr[43*4 + 3]);
+}
+
+
+void test_encrypt_block(void){
+
+	// Specify data block to be operated on. Based on example vector in NIST standards document.
+	uint8_t data[16] = {
+		0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff
+	};
+
+	// Specify cipher key
+	uint8_t cipher_key_256[32] = {
+		0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f,
+		0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x1e, 0x1f
+	};
+
+	encrypt_16_bytes(data, 256, cipher_key_256);
+
 }

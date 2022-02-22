@@ -16,6 +16,7 @@
 #include <stdint.h>
 #include "s_box.h"
 #include "pre_cipher_utils.h"
+#include "cipher_utils.h"
 
 
 //extern uint8_t Nb, Nr, Nk;
@@ -27,7 +28,7 @@
  * Outputs : Function writes cipher output directly to the memory location
  *           pointed to by the parameter "data_128_bits".
  */
-void encrypt_block_128(uint8_t* data_128_bits, uint32_t cipher_key_len, uint8_t* cipher_key);
+void encrypt_16_bytes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key);
 
 
 /*
@@ -37,17 +38,8 @@ void encrypt_block_128(uint8_t* data_128_bits, uint32_t cipher_key_len, uint8_t*
  * Outputs : Function writes cipher output directly to the memory location
  *           pointed to by the parameter "data_128_bits".
  */
-void decrypt_block_128(char* data_128_bits, uint32_t cipher_key);
+//void decrypt_16_bytes();
 
-
-/*
- * Purpose : Provides the key schedule for the first operation of the add key
- *           function
- * Inputs  :
- * Outputs : A pointer to an array of Nb * (Nr + 1) 32-bit words (the key
- *           schedule). Nr is defined as the number of rounds (14 for 256
- *           bit AES). Nb is defined as
- */
 
 
 #endif /* AES_256_H_ */
