@@ -1,0 +1,17 @@
+THINGS I'VE LEARNED FROM THIS PROJECT
+
+/*********************************************************************\
+DATE : 2-21-22
+-----------------------------------------------------------------------
+1)
+Having a library with different run configurations can be a bit tricky. The AES algorithm does a certain number of "rounds" of scrambling, which is partially dependent on the length of the cipher key. I decided earlier today to extend my library to allow use of 128, 192, or 256 bit keys. This meant that I needed to parameterize some of the operations within my functions to account for the changing key length. This created some difficulty in the 
+generate_key_schedule() function. I needed to create a key_schedule[] array, but I wanted it declared inside the function. However, to make the variable exist for the length of the program I needed to make it "static". I ran into the issue that I couldn't have the number of elements in the array be parameterized (variable) and have the array be static. I ended up declaring the array with the number of elements required for AES-256 and then zero-padding the end if AES-192 or AES-128 was going to be used. 
+
+2)
+Extern doesn't actually make a variable a global variable. All it does is tell the compiler that the variable is defined (and has its memory allocated) in another file. Kind-of a subtle distinction. 
+
+3)
+Even testing fairly simple code can take a lot of time. Almost all the major pieces of code I wrote today didn't work the first time. 
+
+
+/*********************************************************************\
