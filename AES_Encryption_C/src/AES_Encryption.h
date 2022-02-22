@@ -1,11 +1,12 @@
 /*
  ============================================================================
- Name        : AES_256.h
+ Name        : AES_Encryption.h
  Author      : NEOlson
  Version     : 1
  Copyright   : N/A
  Date        : Feb 20, 2022
- Description : AES 256-bit encryption/decryption module. Hardware independent.
+ Description : AES encryption/decryption module. Hardware independent. Can
+               use 128, 192, or 256 bit keys.
  ============================================================================
  */
 
@@ -13,6 +14,11 @@
 #define AES_256_H_
 
 #include <stdint.h>
+#include "s_box.h"
+#include "pre_cipher_utils.h"
+
+
+//extern uint8_t Nb, Nr, Nk;
 
 /*
  * Purpose : Main encryption function
@@ -21,7 +27,7 @@
  * Outputs : Function writes cipher output directly to the memory location
  *           pointed to by the parameter "data_128_bits".
  */
-void encrypt_block_128(char*, uint32_t);
+void encrypt_block_128(uint8_t* data_128_bits, uint32_t cipher_key_len, uint8_t* cipher_key);
 
 
 /*
@@ -42,14 +48,6 @@ void decrypt_block_128(char* data_128_bits, uint32_t cipher_key);
  *           schedule). Nr is defined as the number of rounds (14 for 256
  *           bit AES). Nb is defined as
  */
-uint32_t generate_key_schedule(uint32_t* cipher_key);
-
-
-
-
-
-
-
 
 
 #endif /* AES_256_H_ */
