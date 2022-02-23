@@ -19,7 +19,6 @@
 #include "aes_encryption.h"
 
 void test_s_box(void);
-void test_global_params(void);
 void test_mult_by_x(void);
 void test_generate_key_schedule(void);
 void test_encrypt_block(void);
@@ -32,15 +31,13 @@ int main(){
 
 //test_s_box();
 
-//test_global_params();
-
 //test_mult_by_x();
 
 //test_generate_key_schedule();
 
-//test_encrypt_block();
+test_encrypt_block();
 
-test_decrypt_block();
+//test_decrypt_block();
 
 	return 0;
 }
@@ -57,17 +54,6 @@ void test_s_box(void){
 }
 
 
-void test_global_params(void){
-
-set_global_params(128);
-
-printf("Nk %d\n", Nk);
-printf("Nb %d\n", Nb);
-printf("Nr %d\n", Nr);
-
-}
-
-
 void test_mult_by_x(void){
 
 	uint8_t test_byte = 0x57;
@@ -78,7 +64,11 @@ void test_mult_by_x(void){
 
 
 void test_generate_key_schedule(void){
-	set_global_params(128);
+
+	uint8_t cipher_key_len = 128;
+
+	const uint8_t Nk = set_algo_params(cipher_key_len, Nk_);
+	const uint8_t Nr = set_algo_params(cipher_key_len, Nr_);
 
 	uint8_t cipher_key_256[32] = {
 		0x60, 0x3d, 0xeb, 0x10, 0x15, 0xca, 0x71, 0xbe, 0x2b, 0x73, 0xae, 0xf0, 0x85, 0x7d, 0x77, 0x81,
@@ -97,7 +87,7 @@ void test_generate_key_schedule(void){
 	uint8_t* key_ptr = &cipher_key_128;
 	uint8_t* key_schedule_ptr;
 
-	key_schedule_ptr = generate_key_schedule(key_ptr);
+	key_schedule_ptr = generate_key_schedule(key_ptr, Nr, Nk);
 	// Word 8 byte 0
 	printf("%d\n",key_schedule_ptr[43*4]);
 	printf("%d\n",key_schedule_ptr[43*4 + 1]);
@@ -113,22 +103,28 @@ void test_encrypt_block(void){
 		0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff
 	};
 
-	// All cipher keys for tests
+	uint32_t test_key_len = 128;
+
+
 	uint8_t cipher_key_256[32] = {
 		0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f,
 		0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x1e, 0x1f
 	};
+
 
 	uint8_t cipher_key_192[24] = {
 		0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f,
 		0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17
 	};
 
+
 	uint8_t cipher_key_128[16] = {
 		0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f
 	};
 
-	encrypt_16_bytes(data, 192, cipher_key_192);
+	uint32_t out;
+	out = use_aes(data, test_key_len, cipher_key_128, 0);
+	printf("%x", cipher_key_128[15]);
 
 }
 
@@ -163,6 +159,8 @@ void test_decrypt_block(void){
 		0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f
 	};
 
-	decrypt_16_btyes(data_128, 128, cipher_key_128);
+	use_aes(data_128, 128, cipher_key_128, 1);
+
+	//for(int i = 0; i < 16; i++) printf("0x%x ",state[i]);
 
 }

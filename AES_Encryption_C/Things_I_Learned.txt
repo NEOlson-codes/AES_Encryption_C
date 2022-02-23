@@ -1,6 +1,17 @@
 THINGS I'VE LEARNED FROM THIS PROJECT
 
 /*********************************************************************\
+
+DATE : 2-22-22
+-----------------------------------------------------------------------
+1) 
+If you XOR two binary numbers, A and B, then you XOR the result with B, you'll get A out. This is used in a pretty slick way in AES decryption. In every round, you XOR the state vector bytes by the round key. To go in reverse, you just XOR the encrypted data by the round key. Smart! 
+
+2) 
+Writing good comments also takes a lot of time! I probably have more lines of comments in the program than lines of functional code. That's not a bad thing, but something to budget for. 
+
+
+
 DATE : 2-21-22
 -----------------------------------------------------------------------
 1)

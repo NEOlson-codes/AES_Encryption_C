@@ -5,9 +5,9 @@
  Version     : 1
  Copyright   : N/A
  Date        : Feb 21, 2022
- Description : The s-box is a look-up table used in transforms both during the
+ Description : The s-box is a look-up table (LUT) used in transforms both during the
                rounds and to generate the key schedule. This file holds
-               functions related to applying the s-box.
+               functions related to applying the s-box and the s-box LUTs.
  ============================================================================
  */
 
@@ -67,8 +67,7 @@ uint8_t inv_s_box[16][16] = {
 
 
 uint8_t apply_sbox(uint8_t byte){
-	// The two halves of the byte are used as row and column inputs to the
-	// s-box array.
+	// The two halves of the byte are used as row and column inputs to the s-box array.
 	uint8_t upper_half = (byte >> 4);
 	uint8_t lower_half = (byte & 0B00001111);
 
@@ -77,8 +76,7 @@ uint8_t apply_sbox(uint8_t byte){
 
 
 uint8_t apply_inv_sbox(uint8_t byte){
-	// The two halves of the byte are used as row and column inputs to the
-	// inverse s-box array.
+	// The two halves of the byte are used as row and column inputs to the inverse s-box array.
 	uint8_t upper_half = (byte >> 4);
 	uint8_t lower_half = (byte & 0B00001111);
 

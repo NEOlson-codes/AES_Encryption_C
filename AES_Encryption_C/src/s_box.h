@@ -7,7 +7,7 @@
  Date        : Feb 20, 2022
  Description : S-box (substitution box) is a look-up table used in transforms
  	           both during the rounds and to generate the key schedule. This
- 	           header holds several functions related to the s-box.
+ 	           header holds function declarations related to the s-box.
  ============================================================================
  */
 

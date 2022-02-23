@@ -9,65 +9,57 @@
                performing other work that is set-up for the cipher process.
                This includes creating the key schedule and defining cipher
                key length-dependent parameters.
+ Note 1      : Readers of the code will note that all of the operations on the
+               state vector are byte-indexed (as opposed to word indexed).
+               There is a very specific reason for this. All the operations in
+               this algorithm are byte operations. Words would need to be
+               decomposed in order to operate on the bytes, which would be
+               very inefficient.
  ============================================================================
  */
 
 #include "pre_cipher_utils.h"
 
-// Global declaration of parameter values. Default cipher key is 256 bits.
-// Parameterizing some of the function inputs for encryption
-// and decryption allows the module to operate with variable
-// cipher key lengths.
-uint8_t Nb = 4, Nr = 14, Nk = 8;
+// Function descriptions are in pre_cipher_utils.h
 
-// Nb is defined as the number of 4-byte words
-// in the input data block. AES only takes 128-bit data blocks,
-// therefore Nb will always be 4.
+uint8_t set_algo_params(uint32_t cipher_key_len, key_params param){
 
-// Nk is the number of 4-byte words in the encryption key.
-// Nr is the number of rounds of transformations to perform on the state matrix.
-
-
-// See description in pre_cipher_utils.h
-void set_global_params(uint32_t cipher_key_len){
+	uint8_t Nk, Nr;
 
 	// Set parameters related to the cipher key length based
-	if(cipher_key_len == 256){} // Do nothing. 256-bit cipher key is default
+	if(cipher_key_len == 256){
+		Nk = 8;
+		Nr = 14;
+	}
 	else if(cipher_key_len == 192){
 		Nk = 6;
 		Nr = 12;
 	}
-	else if(cipher_key_len == 128){
+	else{ //cipher_key_len == 128, guaranteed by error_handler()
 		Nk = 4;
 		Nr = 10;
 	}
-	else abort();
-	// If the cipher key length is not valid, abort the program. This
-	// will force a failure that causes the the programmer using the
-	// module to inspect how they're using it.
+
+	if(param == Nk_) return Nk;
+	else return Nr;
 }
 
 
-// See description in pre_cipher_utils.h
-uint8_t* generate_key_schedule(uint8_t* cipher_key){
+const uint8_t* generate_key_schedule(uint8_t* cipher_key, const uint8_t Nr, const uint8_t Nk){
 
-	// 4 words from the schedule key are XOR'ed with the state matrix
-	// once at the beginning of the cipher process and during each of the
-	// 14 rounds.
-	size_t key_schedule_len = 4 * Nb * (Nr + 1);
+	// 16 bytes from the schedule key are XOR'ed with the state matrix
+	// once at the beginning of the cipher process and during each of the 14 rounds.
+	size_t key_schedule_len = 16 * (Nr + 1);
 
 	// All data will be stored as bytes. Key schedule generator will use word
-	// count to keep track of which transform to apply. key_schedule array
+	// count to keep track of which transform to apply.
     static uint8_t key_schedule[240] = {0};
-
-    // Note: key_schedule could not be "static" and be given its length parametrically.
-    // My solution is to give key_schedule the length required by AES-256 and pad
-    // the end with zeros if the actual implementation is AES-128 or AES-192.
 
     size_t word = 0;
 
     // The Nk words (32 bytes per word) of the cipher key are the first Nk words
-	// of the schedule key.
+	// of the schedule key. Since there are 4 bytes per word, the index [word * 4]
+    // accesses byte zero of that word.
     while(word < Nk){
 		key_schedule[word*4] = cipher_key[word*4];
 		key_schedule[word*4 + 1] = cipher_key[word*4 + 1];
@@ -75,6 +67,7 @@ uint8_t* generate_key_schedule(uint8_t* cipher_key){
 		key_schedule[word*4 + 3] = cipher_key[word*4 + 3];
 		word++;
 	}
+
 
 	// Each key_schedule value after Nk is a transformation of the
 	// previous word in key_schedule. In the following loop,
@@ -124,7 +117,8 @@ uint8_t* generate_key_schedule(uint8_t* cipher_key){
 			for(uint8_t i = 0; i < 4; i++) temp_word[i] = apply_sbox(temp_word[i]);
 		}
 
-		// Perform final XOR (with word Nk words back) to get key_schedule(word)
+		// Perform final XOR (with word Nk words back) to get key_schedule(word). All byte
+		// operations are written out for clarity.
 		temp_word[0] ^= key_schedule[(word - Nk)*4];
 		temp_word[1] ^= key_schedule[(word - Nk)*4 + 1];
 		temp_word[2] ^= key_schedule[(word - Nk)*4 + 2];
@@ -140,22 +134,6 @@ uint8_t* generate_key_schedule(uint8_t* cipher_key){
 
 	// Return the pointer to the first element of the key_schedule array
 	return key_schedule;
-}
-
-
-uint8_t mult_by_x(uint8_t byte, uint8_t num_multiplications){
-
-	// Check if the 7th bit is a one. If yes then reduce the polynomial
-	for(uint8_t i = 1; i <= num_multiplications; i++){
-		// Need to check if 8th bit of input byte is 1. If yes, xor is required.
-		if(byte > 127){
-			byte <<= 1;
-			byte ^= 0x1b;
-		}
-		else byte <<= 1;
-	}
-
-	return byte;
 }
 
 

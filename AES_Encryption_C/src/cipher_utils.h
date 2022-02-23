@@ -7,6 +7,13 @@
  Date        : Feb 22, 2022
  Description : Contains functions used in the AES cipher algorithm (encryption)
                and functions used in its inversion (decryption)
+ Note 1      : Keeping the state as a 1D matrix rather than transforming it into
+               a 2D (4x4) matrix is intentional. Copying the state into a 2D matrix
+               would make the code in the functions below more readable, but it
+               would also require many copy operations (at least 1x the entire
+               input dataset). If this module were used to encrypt GB of data then
+               copying the whole input dataset would make the module significantly
+               slower.
  ============================================================================
  */
 
@@ -30,6 +37,7 @@ void add_round_key(uint8_t* state, uint8_t* round_key, uint8_t* round_num, uint8
  * Inputs  : State matrix
  * Outputs : Transformed (row shifted) state matrix
  */
+void shift_rows(uint8_t* state);
 
 // Concept of 2D state matrix. b# is the byte number in the 1D state matrix.
 //      Col    0    1    2    3
@@ -38,8 +46,6 @@ void add_round_key(uint8_t* state, uint8_t* round_key, uint8_t* round_num, uint8
 //   1        b1   b5   b9   b13
 //   2        b2   b6   b10  b14
 //   3        b3   b7   b11  b15
-
-void shift_rows(uint8_t* state);
 
 
 /*
@@ -73,11 +79,23 @@ void inv_mix_col_words(uint8_t* state);
 
 
 /*
+ * Purpose : Multiplies a finite field polynomial by x. Multiplication of two large order
+ *           polynomials can be broken into one of the polynomials being multiplied by
+ *           x many times (with polynomial modulo if order =8). See NIST standard
+ *           document (FIPS 197) for more details.
+ * Inputs  : Finite field polynomial to multiply (represented by a binary byte) and the
+ *           number of times it will be multiplied by x.
+ * Outputs : Polynomial product of multiplication
+ */
+uint8_t mult_by_x(uint8_t byte, uint8_t num_multiplications);
+
+
+/*
  * Purpose : Allows for a succinct multiplication of a finite field
- *           polynomial by x many times. {02} represents a multiply
- *           by x in finite fields notation. {04} is x^2, and so on. See the
- *           NIST standard (FIPS 197) for more information. This function is
- *           needed specifically for use in inv_mix_col_words().
+ *           polynomial A by another polynomial B where (B % X != 0).
+ *           {02} represents a multiply by x in finite fields notation.
+ *           {03} is x + 1, and so on. See the NIST standard (FIPS 197) for more
+ *           information. This function is needed specifically for use in inv_mix_col_words().
  * Inputs  : Expansion polynomial in hex, byte to transform
  * Outputs : Transformed state matrix (column bytes mixed)
  */

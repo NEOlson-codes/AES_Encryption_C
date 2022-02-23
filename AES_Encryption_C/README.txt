@@ -1,9 +1,9 @@
 /*********************************************************************\
- PROJECT      : AES-256 Encryption Module
- PURPOSE      : C language practice, learn more encryption algorithms
- DATE STARTED : 2-20-22
-
- NOTES        : 
+ PROJECT        : AES-256 Encryption Module
+ PURPOSE        : C language practice, learn more encryption algorithms
+ DATE STARTED   : 2-20-22
+ MAIN INTERFACE : aes_encryption.c
+ NOTES          : 
 
 I thought it would be a fun exercise to do the following - create an 
 implementation of the AES-256 encryption algorithm, then use it to store
