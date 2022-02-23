@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : AES_Encryption.h
+ Name        : aes_encryption.h
  Author      : NEOlson
  Version     : 1
  Copyright   : N/A
@@ -10,8 +10,8 @@
  ============================================================================
  */
 
-#ifndef AES_256_H_
-#define AES_256_H_
+#ifndef AES_ENCRYPTION_H_
+#define AES_ENCRYPTION_H_
 
 #include <stdint.h>
 #include "s_box.h"
@@ -19,14 +19,13 @@
 #include "cipher_utils.h"
 
 
-//extern uint8_t Nb, Nr, Nk;
-
 /*
  * Purpose : Main encryption function
  * Inputs  : Takes 128 bit block of plaintext data to perform cipher on.
- *           Also takes 256-bit cipher key.
+ *           Also takes 128, 192, or 256 bit cipher key.
  * Outputs : Function writes cipher output directly to the memory location
- *           pointed to by the parameter "data_128_bits".
+ *           pointed to by the parameter "data_128_bits". That memory location
+ *           is predetermined by a separate hardware-specific wrapper module.
  */
 void encrypt_16_bytes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key);
 
@@ -34,12 +33,12 @@ void encrypt_16_bytes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* 
 /*
  * Purpose : Main decryption function
  * Inputs  : Takes pointer to 128 bit block of encrypted data to decipher.
- *           Also takes 256-bit cipher key.
+ *           Also takes 128, 192, or 256 bit cipher key.
  * Outputs : Function writes cipher output directly to the memory location
- *           pointed to by the parameter "data_128_bits".
+ *           pointed to by the parameter "data_128_bits". That memory location
+ *           is predetermined by a separate hardware-specific wrapper module.
  */
-//void decrypt_16_bytes();
+void decrypt_16_btyes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key);
 
 
-
-#endif /* AES_256_H_ */
+#endif /* AES_ENCRYPTION_H_ */

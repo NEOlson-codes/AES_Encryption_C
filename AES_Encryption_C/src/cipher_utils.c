@@ -5,20 +5,22 @@
  Version     : 1
  Copyright   : N/A
  Date        : Feb 22, 2022
- Description : Contains functions used in the AES cipher algorithm
+ Description : Contains functions used in the AES cipher algorithm (encryption)
+               and functions used in its inversion (decryption)
  ============================================================================
  */
 
 #include "cipher_utils.h"
 
-void add_round_key(uint8_t* state, uint8_t* round_key, uint8_t* round_num){
+void add_round_key(uint8_t* state, uint8_t* round_key, uint8_t* round_num, uint8_t encrypt_or_decrypt){
 	// XOR bytes of the state with bytes of the round_key
 	for(uint8_t i = 0; i < 16; i++){
 		state[i] ^= round_key[(16 * (*round_num)) + i];
 	}
 
-	// Every time a round key is added, the round number is incremented
-	(*round_num)++;
+	// Every time a round key is added, the round number changes
+	if (encrypt_or_decrypt == 0) (*round_num)++; // '0' for encryption
+	else if (encrypt_or_decrypt == 1) (*round_num)--; // '1' for decryption
 }
 
 
@@ -67,8 +69,6 @@ void shift_rows(uint8_t* state){
 
 
 void mix_col_words(uint8_t* state){
-	// Perform finite fields math operations on the bytes in each column.
-	// Simplified equations for each element given by NIST standard document (FIPS 197)
 
 	uint8_t r0, r1, r2, r3;
 
@@ -96,3 +96,103 @@ void mix_col_words(uint8_t* state){
 
 }
 
+
+void inv_shift_rows(uint8_t* state){
+	// Row 0 is not to be modified.
+
+	uint8_t row = 1;
+	uint8_t col = 0;
+	// Since the state is stored as a 1D array of 16 bytes, it's necessary to keep
+	// track of the conceptual "rows" and "columns". See cipher_utils.h for a
+	// diagram of the state bytes and their order.
+	// Shift row 1 by 1 byte to the right (to reverse the original operation)
+
+	// Create a temporary byte to hold the fourth byte in row 1
+	uint8_t temp_byte = state[(col + 3) * 4 + row];
+	// Rather than increment the col variable, it's clearer to use an offset from zero
+	state[(col + 3) * 4 + row] = state[(col + 2) * 4 + row];
+	state[(col + 2) * 4 + row] = state[(col + 1) * 4 + row];
+	state[(col + 1) * 4 + row] = state[col * 4 + row];
+	state[col * 4 + row] = temp_byte;
+
+
+	// Shift row 2 by 2 bytes to the right
+	row = 2;
+	// Store the first two bytes in row 2 in temporary variables.
+	temp_byte = state[(col + 2) * 4 + row];
+
+	uint8_t temp_byte2 = state[(col + 3) * 4 + row];
+
+	state[(col + 3) * 4 + row] = state[(col + 1) * 4 + row];
+	state[(col + 2) * 4 + row] = state[col * 4 + row];
+	state[col * 4 + row] = temp_byte;
+	state[(col + 1) * 4 + row] = temp_byte2;
+
+	// Shift row 3 by 3 to the right
+	row = 3;
+
+	// In practice, shift 3 right is equivalent to shift 1 left
+	temp_byte = state[col * 4 + row];
+	state[col * 4 + row] = state[(col + 1) * 4 + row];
+	state[(col + 1) * 4 + row] = state[(col + 2) * 4 + row];
+	state[(col + 2) * 4 + row] = state[(col + 3) * 4 + row];
+	state[(col + 3) * 4 + row] = temp_byte;
+}
+
+
+void inv_mix_col_words(uint8_t* state){
+
+	uint8_t r0, r1, r2, r3;
+
+	// Like with shift_rows, the state matrix is conceptualized as a 4x4 2D matrix
+	for(uint8_t col = 0; col < 4; col++){
+		// Need temp variables for every element in the column
+		r0 = state[(col * 4)];
+		r1 = state[(col * 4) + 1];
+		r2 = state[(col * 4) + 2];
+		r3 = state[(col * 4) + 3];
+
+		// All equations shown in comments involve finite fields operations
+		// row_0_out = ({0e} * row_0_in) + ({0b} * row_1_in) + ({0d} * row_2_in) + ({09} * row_3_in)
+		state[(col * 4)] = mult_by_x_expansion(0x0e, r0) ^ mult_by_x_expansion(0x0b, r1) ^
+				           mult_by_x_expansion(0x0d, r2) ^ mult_by_x_expansion(0x09, r3);
+
+		// row_1_out = ({09} * row_0_in) + ({0e} * row_1_in) + ({0b} * row_2_in) + ({0d} * row_3_in)
+		state[(col * 4) + 1] = mult_by_x_expansion(0x09, r0) ^ mult_by_x_expansion(0x0e, r1) ^
+				               mult_by_x_expansion(0x0b, r2) ^ mult_by_x_expansion(0x0d, r3);
+
+		// row_2_out = ({0d} * row_0_in) + ({09} * row_1_in) + ({0e} * row_2_in) + ({0b} * row_3_in)
+		state[(col * 4) + 2] = mult_by_x_expansion(0x0d, r0) ^ mult_by_x_expansion(0x09, r1) ^
+	               	           mult_by_x_expansion(0x0e, r2) ^ mult_by_x_expansion(0x0b, r3);
+
+		// row_3_out = ({0b} * row_0_in) + ({0d} * row_1_in) + ({09} * row_2_in) + ({0e} * row_3_in)
+		state[(col * 4) + 3] = mult_by_x_expansion(0x0b, r0) ^ mult_by_x_expansion(0x0d, r1) ^
+    	           	   	       mult_by_x_expansion(0x09, r2) ^ mult_by_x_expansion(0x0e, r3);
+	}
+
+}
+
+
+uint8_t mult_by_x_expansion(uint8_t expansion_hex, uint8_t byte){
+
+	uint8_t out;
+	// inv_mix_col_words only has four expansions: {09}, {0b}, {0d}, and {0e}
+	if(expansion_hex == 0x09){
+		// ({08} + {01}) * byte
+		out = mult_by_x(byte, 3) ^ byte;
+	}
+	else if(expansion_hex == 0x0b){
+		// ({08} + {02} + {01}) * byte
+		out = mult_by_x(byte, 3) ^ mult_by_x(byte, 1) ^ byte;
+	}
+	else if(expansion_hex == 0x0d){
+		// ({08} + {04} + {01}) * byte
+		out = mult_by_x(byte, 3) ^ mult_by_x(byte, 2) ^ byte;
+	}
+	else{ // if expansion_hex == 0x0e
+		// ({08} + {04} + {02}) * byte
+		out = mult_by_x(byte, 3) ^ mult_by_x(byte, 2) ^ mult_by_x(byte, 1);
+	}
+
+	return out;
+}

@@ -7,8 +7,7 @@
  Date        : Feb 20, 2022
  Description : S-box (substitution box) is a look-up table used in transforms
  	           both during the rounds and to generate the key schedule. This
- 	           header holds the s-box, a 2D array of byte values. Several
- 	           functions related to the s-box are also declared.
+ 	           header holds several functions related to the s-box.
  ============================================================================
  */
 
@@ -18,6 +17,7 @@
 #include <stdint.h>
 
 extern uint8_t s_box[16][16];
+extern uint8_t inv_s_box[16][16];
 
 /*
  * Purpose : Exchanges a byte's value with its corresponding value in the
@@ -27,6 +27,13 @@ extern uint8_t s_box[16][16];
  */
 uint8_t apply_sbox(uint8_t byte);
 
+
+/*
+ * Purpose : Performs the inverse substitution of the original s-box
+ * Inputs  : 1 byte of s-box lookup values from the encryption process
+ * Outputs : 1 byte that was originally transformed by the s-box
+ */
+uint8_t apply_inv_sbox(uint8_t byte);
 
 #endif /* S_BOX_H_ */
 
