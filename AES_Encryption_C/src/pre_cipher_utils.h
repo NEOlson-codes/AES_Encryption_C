@@ -23,6 +23,8 @@
 
 #include <stdint.h>
 #include "stddef.h"
+#include "s_box.h"
+#include "cipher_utils.h"
 
 typedef enum key_dependent_params{Nk_, Nr_} key_params;
 
@@ -47,7 +49,7 @@ uint8_t set_algo_params(uint32_t cipher_key_len, key_params param);
  *           declared as static so the memory remains allocated for the
  *           duration of the program.
  */
-const uint8_t* generate_key_schedule(uint8_t* cipher_key, const uint8_t Nr, const uint8_t Nk);
+uint8_t* generate_key_schedule(uint8_t* cipher_key, const uint8_t Nr, const uint8_t Nk);
 
 
 #endif /* PRE_CIPHER_UTILS_H_ */

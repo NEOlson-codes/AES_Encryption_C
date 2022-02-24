@@ -2,6 +2,13 @@ THINGS I'VE LEARNED FROM THIS PROJECT
 
 /*********************************************************************\
 
+DATE : 2-24-22
+-----------------------------------------------------------------------
+1) 
+I haven't run into many issues in the past with code portability, but today I saw a few examples where different compilers treat code differently. Particularly, I didn't know that it was only GCC that accepted binary notation (0B[bin_num]). I thought that was more universal, but no! The ARM compiler was having a fit over it, so I had to change it. Takeaway: know what syntax is in the C standard and what's compiler-specific. Steer clear of using compiler specific syntax in your code. 
+
+
+
 DATE : 2-22-22
 -----------------------------------------------------------------------
 1) 

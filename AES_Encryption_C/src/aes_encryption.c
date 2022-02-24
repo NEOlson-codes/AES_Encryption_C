@@ -40,7 +40,7 @@ uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* ciphe
 	const uint8_t Nr = set_algo_params(cipher_key_len, Nr_);
 
 	// Generate round keys, which are the same for both encryption and decryption.
-	const uint8_t* round_keys = generate_key_schedule(cipher_key, Nr, Nk);
+	uint8_t* round_keys = generate_key_schedule(cipher_key, Nr, Nk);
 
 	// Call main encryption or decryption function based on encrypt_or_decrypt flag
 	if(encrypt_or_decrypt == 0){
@@ -51,7 +51,7 @@ uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* ciphe
 	}
 
 	// Erase the cipher key (as mentioned above)
-	for(uint8_t i = 0; i < 16; i++) cipher_key[i] = 0;
+	for(uint8_t i = 0; i < (Nk * 4); i++) cipher_key[i] = 0;
 
 
 	return EXIT_SUCCESS;

@@ -45,7 +45,7 @@ uint8_t set_algo_params(uint32_t cipher_key_len, key_params param){
 }
 
 
-const uint8_t* generate_key_schedule(uint8_t* cipher_key, const uint8_t Nr, const uint8_t Nk){
+uint8_t* generate_key_schedule(uint8_t* cipher_key, const uint8_t Nr, const uint8_t Nk){
 
 	// 16 bytes from the schedule key are XOR'ed with the state matrix
 	// once at the beginning of the cipher process and during each of the 14 rounds.

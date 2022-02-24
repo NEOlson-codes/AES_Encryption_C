@@ -69,7 +69,7 @@ uint8_t inv_s_box[16][16] = {
 uint8_t apply_sbox(uint8_t byte){
 	// The two halves of the byte are used as row and column inputs to the s-box array.
 	uint8_t upper_half = (byte >> 4);
-	uint8_t lower_half = (byte & 0B00001111);
+	uint8_t lower_half = byte & 0x0F;
 
 	return s_box[upper_half][lower_half];
 }
@@ -78,7 +78,7 @@ uint8_t apply_sbox(uint8_t byte){
 uint8_t apply_inv_sbox(uint8_t byte){
 	// The two halves of the byte are used as row and column inputs to the inverse s-box array.
 	uint8_t upper_half = (byte >> 4);
-	uint8_t lower_half = (byte & 0B00001111);
+	uint8_t lower_half = byte & 0x0F;
 
 	return inv_s_box[upper_half][lower_half];
 }
