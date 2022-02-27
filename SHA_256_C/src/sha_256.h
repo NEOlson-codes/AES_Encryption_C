@@ -16,9 +16,10 @@
 #include <stdint.h>
 #include "pre_hash_funcs.h"
 #include "math_funcs.h"
+#include "hash_funcs.h"
 
 
-uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words);
+uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words, uint32_t* output_loc);
 
 uint32_t error_handler();
 

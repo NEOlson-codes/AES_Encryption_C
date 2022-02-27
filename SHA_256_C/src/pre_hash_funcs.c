@@ -16,13 +16,9 @@
 
 uint32_t* pad_msg(uint64_t words_of_padding, uint64_t msg_len_words){
 
-
-	// No padding required if msg is a multiple of 512 bits (16 words)
-	if (words_of_padding == 0) return NULL;
-
-	// At maximum, there will be 19 words in the padding array.  Must have a constant
+	// At maximum, there will be 18 words in the padding array.  Must have a constant
 	// number of elements to be declared static.
-	static uint32_t padding_array[19] = {0};
+	static uint32_t padding_array[18] = {0};
 	// If padding is required, the minimum number of padding words will be 3
 
 	// Put a '1' immediately after the message

@@ -17,13 +17,11 @@
 
 // The message will be a multiple of 32 bits.
 
-uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words) {
+uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words, uint32_t* output_loc){
 
 	//error_handler();
 
-	uint32_t no_padding_flag = 1;
-	// Flag becomes active if the zero pad was extended to include another block
-	uint32_t pad_2_blocks = 0;
+	uint32_t* pad_array;
 
 	// Determine the number of words of padding required at the end of the message.
 	// There are 16 words per message block
@@ -33,10 +31,9 @@ uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words) {
 		// Pad must be at least 3 words, or it wraps to incorporate another block
 		if (pad_amt < 3){
 			pad_amt = pad_amt + 16;
-			pad_2_blocks = 1;
 		}
-		uint32_t* pad_array = pad_msg(pad_amt, msg_len_words);
-		no_padding_flag = 0;
+
+		pad_array = pad_msg(pad_amt, msg_len_words);
 	}
 
 	// Initialized to the initial hash as defined in NIST FIPS 180-4 (SHA standard)
@@ -66,16 +63,33 @@ uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words) {
 
 	//
 	uint32_t msg_block[16] = {0};
-	for(uint64_t blk_num = 1; blk_num < total_blocks; blk_num++){
 
+	// Initialize the place to start the padding as the block after last, meaning the program will never hit it (if pad_amt is 0)
+	uint64_t start_pad = total_blocks;
+	if (pad_amt > 0){
+		// Calculate what block number the padding needs to start
+		(pad_amt < 16) ? (start_pad = total_blocks - 1) : (start_pad = total_blocks - 2);
+	}
 
-		// *********************************************************************************** //
-		// Create the message block
-		if (total_blocks != 1)
-		fill_current_block(msg, pad_array, total_blocks, blk_num, &msg_block, pad_amt, pad_2_blocks);
+	// Begin the hashing function, 1 iteration for each 512 bit message block
+	for(uint64_t blk_num = 0; blk_num < total_blocks; blk_num++){
 
+		// Create the message block. This conditional determines whether padding should be added or not
+		if (blk_num >= start_pad){
+			if (blk_num == start_pad){
+				// This block will be the end of the message and the first words (perhaps only words) of the pad
+				fill_blk_msg_and_pad(msg, msg_len_words, &msg_block, pad_array);
+			}
+			else{
+				// This is only used if the zero pad takes up more than a full 16-word block
+				fill_msg_blk_w_pad(pad_array, pad_amt, &msg_block);
+			}
+		}
+		// Fill the 512-bit block only with message bits (this will be what happens most of the time)
+		else{
+			fill_msg_blk_no_pad(msg, blk_num, &msg_block);
+		}
 
-		// *********************************************************************************** //
 
 		void create_msg_schedule(msg_schedule_array, msg_block);
 
@@ -125,11 +139,11 @@ uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words) {
 		h = hash_vals[7];
 	}
 
+// Place the final hash values into the location the wrapper function expects
+for (uint32_t i = 0; i < 8; i++){
 
-
-
-
-
+	output_loc[i] = hash_vals[i];
+}
 
 
 	return EXIT_SUCCESS;
@@ -137,11 +151,13 @@ uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words) {
 
 
 
-uint32_t error_handler(){ // uint32_t* msg, uint64_t msg_len_bits
+uint32_t error_handler(uint32_t* msg, uint64_t msg_len_words, uint32_t* output_loc){
 
 	// Error code '1': msg is a null pointer
 
 	// Error code '2': msg_len_words is zero
+
+	// Error code '3': msg is a null pointer
 
 
 	return 0;

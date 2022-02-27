@@ -5,11 +5,12 @@
 
 
 void test_padding(void);
+void test_sha(void);
 
 
 int main(){
 
-	test_padding();
+	test_sha();
 
 
 
@@ -33,3 +34,17 @@ void test_padding(void){
 	printf("\n%x",msg_len * 32);
 
 }
+
+
+void test_sha(void){
+
+	uint64_t msg_len = 5;
+	uint32_t message[msg_len] = {4321, 1193, 222222, 118931, 83838};
+
+	uint32_t out_loc[16] = {0};
+
+
+	uint32_t out = use_sha_256(message, msg_len, out_loc);
+
+}
+
