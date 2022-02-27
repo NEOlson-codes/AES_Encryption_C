@@ -18,6 +18,8 @@
 #include "math_funcs.h"
 #include "hash_funcs.h"
 
+extern const uint32_t k_vals[];
+
 
 uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words, uint32_t* output_loc);
 

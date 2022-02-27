@@ -11,7 +11,6 @@
  */
 
 #include "pre_hash_funcs.h"
-#include <stdlib.h>
 
 
 uint32_t* pad_msg(uint64_t words_of_padding, uint64_t msg_len_words){

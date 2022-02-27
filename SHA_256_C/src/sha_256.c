@@ -78,20 +78,20 @@ uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words, uint32_t* output_loc
 		if (blk_num >= start_pad){
 			if (blk_num == start_pad){
 				// This block will be the end of the message and the first words (perhaps only words) of the pad
-				fill_blk_msg_and_pad(msg, msg_len_words, &msg_block, pad_array);
+				fill_blk_msg_and_pad(msg, blk_num, msg_len_words, msg_block, pad_array);
 			}
 			else{
 				// This is only used if the zero pad takes up more than a full 16-word block
-				fill_msg_blk_w_pad(pad_array, pad_amt, &msg_block);
+				fill_msg_blk_w_pad(pad_array, pad_amt, msg_block);
 			}
 		}
 		// Fill the 512-bit block only with message bits (this will be what happens most of the time)
 		else{
-			fill_msg_blk_no_pad(msg, blk_num, &msg_block);
+			fill_msg_blk_no_pad(msg, blk_num, msg_block);
 		}
 
 
-		void create_msg_schedule(msg_schedule_array, msg_block);
+		create_msg_schedule(msg_schedule_array, msg_block);
 
 		// Operations on working variables as defined by NIST FIPS 180-4 (SHA standard)
 		for (uint32_t i = 0; i < 64; i++){
