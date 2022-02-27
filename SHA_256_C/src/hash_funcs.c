@@ -13,6 +13,7 @@
 #include "math_funcs.h"
 
 
+// Fill the message block entirely with words from the original message
 void fill_msg_blk_no_pad(uint32_t* msg, uint64_t blk_num, uint32_t* block_to_fill){
 
 	// Find the index of the first word of the current message block
@@ -25,15 +26,21 @@ void fill_msg_blk_no_pad(uint32_t* msg, uint64_t blk_num, uint32_t* block_to_fil
 }
 
 
+// Fill the message block entirely with words from the end of the zero pad
 void fill_msg_blk_w_pad(uint32_t* pad_array, uint32_t pad_words_total, uint32_t* block_to_fill){
 
+	// Words from the pad used in the last block
+	uint32_t start_idx = pad_words_total - 16;
+
 	// Fill the message block with the last 16 entries
-	for (int32_t i = 15; i >= 0; i--){
-		block_to_fill[i] = pad_array[(pad_words_total - 1) - i];
+	for (int32_t i = 0; i < 16; i++){
+		block_to_fill[i] = pad_array[start_idx + i];
 	}
 }
 
 
+// Fill the message block with words from the end of the message and beginning
+// of the zero pad
 void fill_blk_msg_and_pad(uint32_t* msg, uint64_t blk_num, uint64_t msg_len_words, uint32_t* block_to_fill, uint32_t* pad_array){
 
 	uint32_t num_msg_words_in_blk = msg_len_words - (blk_num * 16);

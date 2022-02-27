@@ -6,8 +6,11 @@
  Copyright   : N/A
  Date        : Feb 24, 2022
  Description : SHA-256 hashing module. Hardware independent.
- Note 1      : At max, there could be 2^55 blocks of 512 bits. That's why any value
+ Note 1      : This module requires that message lengths be a multiple of 32 bits
+ Note 2      : At max, there could be 2^55 blocks of 512 bits. That's why any value
                related to the message length uses a uint64_t.
+ Note 3      : This module is meant to be used with a hardware or platform specific
+               wrapper function.
  ============================================================================
  */
 
@@ -15,26 +18,29 @@
 #define EXIT_SUCCESS  0
 
 
-// The message will be a multiple of 32 bits.
-
+// Main caller function
 uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words, uint32_t* output_loc){
 
-	//error_handler();
+	uint32_t error_code = error_handler(msg, msg_len_words, output_loc);
+	// If there is an error, prematurely terminate the program and provide the code
+	if(error_code != 0) return error_code;
 
+	// The message and the pad are initially stored in different arrays. To make this
+	// function hardware independent, we cannot assume the message buffer is large
+	// enough to add padding directly to the message.
 	uint32_t* pad_array;
 
 	// Determine the number of words of padding required at the end of the message.
 	// There are 16 words per message block
-	uint64_t pad_amt = 16 - (msg_len_words % 16);
-	// If required, create a zero pad for the message to reach full 512 bit blocks
-	if (pad_amt != 0){
-		// Pad must be at least 3 words, or it wraps to incorporate another block
-		if (pad_amt < 3){
-			pad_amt = pad_amt + 16;
-		}
+	uint32_t pad_amt = 16 - (msg_len_words % 16);
 
-		pad_array = pad_msg(pad_amt, msg_len_words);
+	// Pad must be at least 3 words, or it wraps to incorporate another block
+	if (pad_amt < 3){
+		pad_amt = pad_amt + 16;
 	}
+
+	pad_array = pad_msg(pad_amt, msg_len_words);
+
 
 	// Initialized to the initial hash as defined in NIST FIPS 180-4 (SHA standard)
 	uint32_t hash_vals[8] = {
@@ -64,14 +70,13 @@ uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words, uint32_t* output_loc
 	//
 	uint32_t msg_block[16] = {0};
 
-	// Initialize the place to start the padding as the block after last, meaning the program will never hit it (if pad_amt is 0)
-	uint64_t start_pad = total_blocks;
-	if (pad_amt > 0){
-		// Calculate what block number the padding needs to start
-		(pad_amt < 16) ? (start_pad = total_blocks - 1) : (start_pad = total_blocks - 2);
-	}
+	// This variable provides a block number to start incorporating the zero padding
+	uint64_t start_pad;
+	// Calculate what block number the padding needs to start
+	(pad_amt <= 16) ? (start_pad = total_blocks - 1) : (start_pad = total_blocks - 2);
 
-	// Begin the hashing function, 1 iteration for each 512 bit message block
+
+	// Begin the rounds of compression, 1 iteration for each 512 bit message block
 	for(uint64_t blk_num = 0; blk_num < total_blocks; blk_num++){
 
 		// Create the message block. This conditional determines whether padding should be added or not
@@ -97,7 +102,9 @@ uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words, uint32_t* output_loc
 		for (uint32_t i = 0; i < 64; i++){
 
 			// add_w_mod() performs addition of 2 32-bit numbers and does a modulo 2^32 operation
-			// if the result overflows past the uint32_t bounds.
+			// if the result overflows past the uint32_t bounds. Doing normal addition and allowing
+			// the compiler to truncate the 32-bit result may result in unreliable behavior depending
+			// on the compiler. I thought it safer to create a function to do the addition.
 			t1 = add_w_mod( add_w_mod( add_w_mod( add_w_mod( h, sum1(e)) , ch_xor(e, f, g)), k_vals[i]),
 					msg_schedule_array[i]);
 
@@ -121,7 +128,7 @@ uint32_t use_sha_256(uint32_t* msg, uint64_t msg_len_words, uint32_t* output_loc
 		b = hash_vals[1];
 
 		hash_vals[2] = add_w_mod(c, hash_vals[2]);
-		c = hash_vals[1];
+		c = hash_vals[2];
 
 		hash_vals[3] = add_w_mod(d, hash_vals[3]);
 		d= hash_vals[3];
@@ -154,11 +161,13 @@ for (uint32_t i = 0; i < 8; i++){
 uint32_t error_handler(uint32_t* msg, uint64_t msg_len_words, uint32_t* output_loc){
 
 	// Error code '1': msg is a null pointer
+	if(msg == NULL) return 1;
 
 	// Error code '2': msg_len_words is zero
+	if(msg_len_words == 0) return 2;
 
 	// Error code '3': msg is a null pointer
-
+	if(output_loc == NULL) return 3;
 
 	return 0;
 }

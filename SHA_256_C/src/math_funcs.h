@@ -1,14 +1,15 @@
 /*
  ============================================================================
- Name        : sha_constants.c
+ Name        : math_funcs.h
  Author      : NEOlson
  Version     : 1
  Copyright   : N/A
  Date        : Feb 24, 2022
- Description :
-
+ Description : Mathematical functions primarily performing bitwise operations
+               and bit shifting.
  ============================================================================
  */
+
 
 
 #ifndef MATH_FUNCS_H_

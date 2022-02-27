@@ -1,3 +1,15 @@
+/*
+ ============================================================================
+ Name        : test_functions.c
+ Author      : NEOlson
+ Version     : 1
+ Copyright   : N/A
+ Date        : Feb 24, 2022
+ Description : This file is for testing components of the SHA-256 module. It
+               is not required to run the module.
+ ============================================================================
+ */
+
 
 #include "sha_256.h"
 #include "pre_hash_funcs.h"
@@ -42,17 +54,22 @@ void test_padding(void){
 
 void test_sha(void){
 
-	uint64_t msg_len = 1;
-	uint32_t message[1] = {0x61616161};
+	uint64_t msg_len = 15;
+	uint32_t message[15] = {
+			0x61616161, 0x61616161, 0x61616161, 0x61616161, 0x61616161, 0x61616161, 0x61616161, 0x61616161, 0x61616161, 0x61616161,
+			0x61616161, 0x61616161, 0x61616161, 0x61616161, 0x61616161
+	};
 
 	uint32_t out_loc[8] = {0};
 
 
 	uint32_t out = use_sha_256(message, msg_len, out_loc);
+	// printf("%d", out);
 
 	for(uint32_t i = 0; i < 8; i++ ){
 		printf("0x%x ",out_loc[i]);
 	}
+
 }
 
 

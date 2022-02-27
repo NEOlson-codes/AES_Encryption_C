@@ -1,12 +1,12 @@
 /*
  ============================================================================
- Name        : pre_hash_funcs.h
+ Name        : pre_hash_funcs.c
  Author      : NEOlson
  Version     : 1
  Copyright   : N/A
  Date        : Feb 24, 2022
- Description :
-
+ Description : Contains the pad generator function and the K constants used
+               to set the temporary variables between compressions.
  ============================================================================
  */
 

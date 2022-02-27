@@ -13,6 +13,7 @@
 #ifndef SHA_256_H_
 #define SHA_256_H_
 
+#include <stdlib.h>
 #include <stdint.h>
 #include "pre_hash_funcs.h"
 #include "math_funcs.h"

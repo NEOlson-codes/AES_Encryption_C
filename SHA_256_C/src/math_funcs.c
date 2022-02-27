@@ -1,12 +1,14 @@
 /*
  ============================================================================
- Name        : sha_constants.c
+ Name        : math_funcs.c
  Author      : NEOlson
  Version     : 1
  Copyright   : N/A
  Date        : Feb 24, 2022
- Description :
-
+ Description : Mathematical functions primarily performing bitwise operations
+               and bit shifting.
+ Note 1      : Naming conventions for the functions are very similar to what
+               appears in the FIPS 180-4 standard (for SHA-2)
  ============================================================================
  */
 
@@ -15,7 +17,7 @@
 
 
 uint32_t add_w_mod(uint32_t num1, uint32_t num2){
-	// Addition may overflow.
+	// Addition may overflow. Set temp to >32 bits
 	uint64_t temp;
 	temp = num1 + num2;
 	// If the result of the addition is > 2^32

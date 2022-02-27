@@ -5,8 +5,8 @@
  Version     : 1
  Copyright   : N/A
  Date        : Feb 24, 2022
- Description :
-
+ Description : Contains the pad generator function and the K constants used
+               to set the temporary variables between compressions.
  ============================================================================
  */
 
