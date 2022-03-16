@@ -11,7 +11,7 @@ binary numbers are treated as polynomials where all coefficients are either '1' 
 
   1      0      1     1     1      0      1    1
 
- x^7 + 0*x^6 + x^5 + x^4 + x^3 + 0*x^2 + x^1 + 1
+ x^7 + (0 * x^6) + x^5 + x^4 + x^3 + (0 * x^2) + x^1 + 1
 
 So, the maximum polynomial order of a byte is 7. Under this framework, there are several acceptable operations. To add two finite fields polynomials, perform the normal polynomial addition and then reduce each coefficient modulo 2. This allows the number to keep its binary representation. The equivalent binary operation is simply an XOR of the two numbers. A useful feature is that subtraction of two polynomials is the exact same operation, XOR, making addition easily reversible. 
 
@@ -23,7 +23,7 @@ A very handy trick is that multiplying two polynomials can be simplified into mu
 
 Think of multiplying two polynomials A and B where A is (x^3 + x + 1) and B is (x^5 + x^2 + 1). It can be broken up as follows: 
 
-(x^3 + x + 1)*B --> (x^3 * B) + (x * B) + B --> x*x*x*B + x*B + B
+(x^3 + x + 1) * B --> (x^3 * B) + (x * B) + B --> (x * x * x * B) + (x * B) + B
 
 A finite field 'x' is binary '2'. Multiplying by 2 is extremely easy on a computer, it's just a left bit shift! Also, the modulo (by the polynomial showed above) is applied whenever the order gets to X^8. However, since the order isn't any higher than 8, the modulo is just a single subtraction by ('100011011': the binary representation of the polynomial showed above). As explained earlier subtraction is just an XOR. So, we've broken down a polynomial multiplication that would normally be difficult to do into successive left shifts and XOR's. Awesome!
 
@@ -31,7 +31,7 @@ Part of the beauty of this algorithm is that the mathematics is really optimized
 
 Another cool thing about using finite fields here is that binary words (collections of 4 bytes) can also be viewed as a polynomial. However, this time the coefficients are binary bytes. So a 32-bit word could be represented as: 
 
-a1*x^3 + a2*x^2 + a3*x + a4
+(a1 * x^3) + (a2 * x^2) + (a3 * x) + a4
 
 where the word (MSB to LSB) is [a1, a2, a3, a4]. The mathematical operations are similar too, except multiplication and addition of two polynomials will involve multiplying or adding their coefficients together (as bytes, which we already covered). The multiplication modulo number for words (to keep multiplications from overflowing) is (x^4 + 1). If you want to read more about finite fields operations on words, go read the standard. 
 
@@ -54,7 +54,7 @@ Ok, you're probably thinking, "how does the cipher key play into all of this?" W
 
 So, given all that background, here's a pseudocode of the whole encryption algorithm. What the functions do is provided below the pseudocode. 
 
-/*--------------------------------------------------------------------------------*\
+/*-----------------------------------------------------------*\
 read input_data, cipher_key
 
 state = input_data
@@ -62,9 +62,12 @@ state = input_data
 key_schedule = create_key_schedule(cipher_key)
 
 round = 0
-add_round_key_to_state(state, key_schedule, round) // "Round 0" is only one operation, which is adding the first round key to the state. 
+
+add_round_key_to_state(state, key_schedule, round) 
+// "Round 0" is only one operation, which is adding the first round key to the state. 
 
 round = 1
+
 while(round < total_rounds)
 	apply_substitution_box(state)
 
@@ -86,7 +89,7 @@ add_round_key_to_state(state, key_schedule, last_round)
 
 encrypted_data_out = state
 
-/*--------------------------------------------------------------------------------*\
+/*-----------------------------------------------------------*\
 
 I'll only give a very brief explanation of the functions here. Go either read the standard or my code if you want to get a better understanding of each of the different functions. 
 
