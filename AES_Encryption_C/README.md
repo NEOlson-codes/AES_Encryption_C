@@ -1,4 +1,4 @@
-/*********************************************************************\
+/***********************************************\
  PROJECT        : AES-256 Encryption Module
  PURPOSE        : C language practice, learn more encryption algorithms
  DATE STARTED   : 2-20-22
@@ -17,5 +17,5 @@ a hash by the SHA-256 algorithm (which I also plan on implementing). I'll
 put the base encryption/decryption and hash modules in a different spot within
 the repo. Also, the AES and SHA implementations will be hardware agnostic. 
 
-/*********************************************************************\
+/***********************************************\
 
