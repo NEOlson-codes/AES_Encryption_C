@@ -15,6 +15,7 @@
 #define S_BOX_H_
 
 #include <stdint.h>
+#include "aes_encryption.h"
 
 extern uint8_t s_box[16][16];
 extern uint8_t inv_s_box[16][16];

@@ -25,6 +25,16 @@
 #include "pre_cipher_utils.h"
 #include "cipher_utils.h"
 
+#define AES_CONSTANTS
+
+#define  EXIT_SUCCESS    0
+#define  BYTES_IN_WORD   4
+#define  BYTES_IN_STATE  16
+#define  HALF_BYTE       4
+#define  WORDS_IN_STATE  4
+#define  COLS_IN_STATE   4
+#define  ROWS_IN_STATE	 4
+
 
 /*
  * Purpose : Wrapper function for encryption & decryption function calls. Includes error
@@ -35,7 +45,7 @@
  *           4. Flag indicating encryption ('0') or decryption ('1')
  * Outputs : Message indicating success or a non-zero error code. Erases cipher key.
  */
-uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint32_t is_decrypt);
+uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint8_t is_decrypt);
 
 
 /*
@@ -46,7 +56,7 @@ uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* ciphe
  *           pointed to by the parameter "data_16_bytes". That memory location
  *           is predetermined by a separate hardware-specific wrapper module.
  */
-void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t is_decrypt, const uint8_t Nr);
+void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint8_t is_decrypt, const uint8_t Nr);
 
 
 /*
@@ -57,7 +67,7 @@ void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t is_d
  *           pointed to by the parameter "data_128_bits". That memory location
  *           is predetermined by a separate hardware-specific wrapper module.
  */
-void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t is_decrypt, const uint8_t Nr);
+void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint8_t is_decrypt, const uint8_t Nr);
 
 
 /*
@@ -71,7 +81,7 @@ void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t is_d
  *           '3' - cipher_key is a null pointer
  *           '4' - is_decrypt flag is not '0' (encrypt) or '1' (decrypt)
  */
-uint8_t check_invalid_input(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint32_t is_decrypt);
+uint8_t check_invalid_input(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint8_t is_decrypt);
 
 
 

@@ -24,13 +24,11 @@
 
 uint8_t set_algo_params(uint32_t cipher_key_len, key_params param){
 
-	uint8_t Nk, Nr;
+	// Default to params for 256 bit cipher_key
+	uint8_t Nk = 8;
+	uint8_t Nr = 14;
 
-	if(cipher_key_len == 256){
-		Nk = 8;
-		Nr = 14;
-	}
-	else if(cipher_key_len == 192){
+	if(cipher_key_len == 192){
 		Nk = 6;
 		Nr = 12;
 	}

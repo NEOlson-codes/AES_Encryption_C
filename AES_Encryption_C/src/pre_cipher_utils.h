@@ -25,6 +25,7 @@
 #include "stddef.h"
 #include "s_box.h"
 #include "cipher_utils.h"
+#include "aes_encryption.h"
 
 typedef enum key_dependent_params{Nk_, Nr_} key_params;
 

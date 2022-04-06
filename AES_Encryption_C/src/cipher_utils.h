@@ -22,6 +22,8 @@
 
 #include <stdint.h>
 #include "pre_cipher_utils.h"
+#include "aes_encryption.h"
+
 
 /*
  * Purpose : XOR's (finite fields "add") current round key to the state matrix
@@ -38,14 +40,6 @@ void add_round_key(uint8_t* state, uint8_t* round_key, uint8_t* round_num, uint8
  * Outputs : Transformed (row shifted) state matrix
  */
 void shift_rows(uint8_t* state);
-
-// Concept of 2D state matrix. b# is the byte number in the 1D state matrix.
-//      Col    0    1    2    3
-// Row
-//   0        b0   b4   b8   b12
-//   1        b1   b5   b9   b13
-//   2        b2   b6   b10  b14
-//   3        b3   b7   b11  b15
 
 
 /*

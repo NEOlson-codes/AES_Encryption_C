@@ -19,14 +19,10 @@
 
 
 #include "aes_encryption.h"
-#define  EXIT_SUCCESS    0
-#define  BYTES_IN_WORD   4
-#define  BYTES_IN_STATE  16
-
 
 // Details for all functions can be found in aes_encryption.h
 
-uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint32_t is_decrypt){
+uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint8_t is_decrypt){
 
 
 	uint8_t invalid_input = check_invalid_input(data_16_bytes, cipher_key_len, cipher_key, is_decrypt);
@@ -44,7 +40,7 @@ uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* ciphe
 	if(is_decrypt == 0){
 		encrypt_16_bytes(data_16_bytes, round_keys, is_decrypt, Nr);
 	}
-	else{
+	else if(is_decrypt == 1){
 		decrypt_16_bytes(data_16_bytes, round_keys, is_decrypt, Nr);
 	}
 
@@ -58,7 +54,7 @@ uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* ciphe
 }
 
 
-void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t is_decrypt, const uint8_t Nr){
+void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint8_t is_decrypt, const uint8_t Nr){
 
 	// Note: Encrypted data will overwrite original message
 	uint8_t* state = data_16_bytes;
@@ -85,10 +81,12 @@ void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t is_d
 	shift_rows(state);
 	add_round_key(state, round_keys, &round_num, is_decrypt);
 
+	for(int i = 0; i < 16; i++) printf("0x%x ",state[i]);
+
 }
 
 
-void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t is_decrypt, const uint8_t Nr){
+void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint8_t is_decrypt, const uint8_t Nr){
 
 	uint8_t* state = data_16_bytes;
 
@@ -121,7 +119,7 @@ void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t is_d
 }
 
 
-uint8_t check_invalid_input(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint32_t is_decrypt){
+uint8_t check_invalid_input(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint8_t is_decrypt){
 
 	// Error code '1': pointer to 16 byte input is a null pointer
 	if(data_16_bytes == NULL) return 1;
