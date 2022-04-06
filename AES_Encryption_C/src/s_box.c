@@ -14,8 +14,7 @@
 #include "s_box.h"
 
 // The inputs to the s-box are the first and second 4-bit values of the byte
-// being transformed. Particularly, bits 0-3 are the column and 4-7 are the
-// row. Think of the R&C inputs as a pair of hex digit.
+// being transformed. Particularly, bits 0-3 are the column and 4-7 are the row.
 uint8_t s_box[16][16] = {
 
 //  0      1      2	     3      4      5      6      7      8      9      a      b      c      d      e      f
@@ -40,9 +39,6 @@ uint8_t s_box[16][16] = {
 
 
 // This is the inversion (to recover the original inputs) to the s_box shown above.
-// The inputs to the s-box are the first and second 4-bit values of the byte
-// being transformed. Particularly, bits 0-3 are the column and 4-7 are the
-// row. Think of the R&C inputs as a pair of hex digits.
 uint8_t inv_s_box[16][16] = {
 
 //  0      1      2	     3      4      5      6      7      8      9      a      b      c      d      e      f

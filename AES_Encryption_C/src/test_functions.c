@@ -124,7 +124,7 @@ void test_encrypt_block(void){
 
 	uint32_t out;
 	out = use_aes(data, test_key_len, cipher_key_128, 0);
-	printf("%x", cipher_key_128[15]);
+	//printf("%x", cipher_key_128[15]);
 
 }
 
@@ -161,6 +161,6 @@ void test_decrypt_block(void){
 
 	use_aes(data_128, 128, cipher_key_128, 1);
 
-	//for(int i = 0; i < 16; i++) printf("0x%x ",state[i]);
+	// for(int i = 0; i < 16; i++) printf("0x%x ",state[i]);
 
 }

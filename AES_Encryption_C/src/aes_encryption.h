@@ -35,7 +35,7 @@
  *           4. Flag indicating encryption ('0') or decryption ('1')
  * Outputs : Message indicating success or a non-zero error code. Erases cipher key.
  */
-uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint32_t encrypt_or_decrypt);
+uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint32_t is_decrypt);
 
 
 /*
@@ -46,7 +46,7 @@ uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* ciphe
  *           pointed to by the parameter "data_16_bytes". That memory location
  *           is predetermined by a separate hardware-specific wrapper module.
  */
-void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t encrypt_or_decrypt, const uint8_t Nr);
+void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t is_decrypt, const uint8_t Nr);
 
 
 /*
@@ -57,7 +57,7 @@ void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t encr
  *           pointed to by the parameter "data_128_bits". That memory location
  *           is predetermined by a separate hardware-specific wrapper module.
  */
-void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t encrypt_or_decrypt, const uint8_t Nr);
+void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t is_decrypt, const uint8_t Nr);
 
 
 /*
@@ -69,9 +69,9 @@ void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint32_t encr
  *           '1' - data_16_bytes is a null pointer
  *           '2' - cipher_key_len is an invalid length (not 128, 192, or 256)
  *           '3' - cipher_key is a null pointer
- *           '4' - encrypt_or_decrypt flag is not '0' (encrypt) or '1' (decrypt)
+ *           '4' - is_decrypt flag is not '0' (encrypt) or '1' (decrypt)
  */
-uint32_t error_handler(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint32_t encrypt_or_decrypt);
+uint8_t check_invalid_input(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint32_t is_decrypt);
 
 
 

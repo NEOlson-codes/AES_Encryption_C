@@ -29,7 +29,7 @@
  *           whether encryption or decryption is occurring.
  * Outputs : Transformed state matrix
  */
-void add_round_key(uint8_t* state, uint8_t* round_key, uint8_t* round_num, uint8_t encrypt_or_decrypt);
+void add_round_key(uint8_t* state, uint8_t* round_key, uint8_t* round_num, uint8_t is_decrypt);
 
 
 /*
