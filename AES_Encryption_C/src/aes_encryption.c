@@ -22,13 +22,17 @@
 
 // Details for all functions can be found in aes_encryption.h
 
-uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint8_t is_decrypt){
+aes_out use_aes(uint8_t* data_16_bytes, cipher_len cipher_key_len, uint8_t* cipher_key, aes_op_flag aes_op){
 
+	aes_out output_code = {
+		.termination_code = 0,
+		.msg = "Encrypt/decrypt successful"
+	};
 
-	uint8_t invalid_input = check_invalid_input(data_16_bytes, cipher_key_len, cipher_key, is_decrypt);
+	check_invalid_input(data_16_bytes, cipher_key_len, cipher_key, aes_op, &output_code);
 
-	if (invalid_input){
-		return invalid_input;
+	if (output_code.termination_code != 0){
+		return output_code;
 	}
 
 	// Set parameters related to cipher key length (e.g. number of scrambling rounds).
@@ -37,11 +41,11 @@ uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* ciphe
 
 	uint8_t* round_keys = generate_key_schedule(cipher_key, Nr, Nk);
 
-	if(is_decrypt == 0){
-		encrypt_16_bytes(data_16_bytes, round_keys, is_decrypt, Nr);
+	if(aes_op == encrypt){
+		encrypt_16_bytes(data_16_bytes, round_keys, aes_op, Nr);
 	}
-	else if(is_decrypt == 1){
-		decrypt_16_bytes(data_16_bytes, round_keys, is_decrypt, Nr);
+	else if(aes_op == decrypt){
+		decrypt_16_bytes(data_16_bytes, round_keys, aes_op, Nr);
 	}
 
 	// Erase the cipher key (as mentioned above)
@@ -50,18 +54,18 @@ uint32_t use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* ciphe
 	}
 
 
-	return EXIT_SUCCESS;
+	return output_code;
 }
 
 
-void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint8_t is_decrypt, const uint8_t Nr){
+void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, aes_op_flag aes_op, const uint8_t Nr){
 
 	// Note: Encrypted data will overwrite original message
 	uint8_t* state = data_16_bytes;
 
 	uint8_t round_num = 0;
 
-	add_round_key(state, round_keys, &round_num, is_decrypt);
+	add_round_key(state, round_keys, &round_num, aes_op);
 
 	while(round_num < Nr){
 
@@ -71,7 +75,7 @@ void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint8_t is_de
 
 		mix_col_words(state);
 
-		add_round_key(state, round_keys, &round_num, is_decrypt);
+		add_round_key(state, round_keys, &round_num, aes_op);
 	}
 
 	// Final round does not include mix_col_words
@@ -79,20 +83,20 @@ void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint8_t is_de
 		state[i] = apply_sbox(state[i]);
 	}
 	shift_rows(state);
-	add_round_key(state, round_keys, &round_num, is_decrypt);
+	add_round_key(state, round_keys, &round_num, aes_op);
 
-	for(int i = 0; i < 16; i++) printf("0x%x ",state[i]);
+	//for(int i = 0; i < 16; i++) printf("0x%x ",state[i]);
 
 }
 
 
-void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint8_t is_decrypt, const uint8_t Nr){
+void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, aes_op_flag aes_op, const uint8_t Nr){
 
 	uint8_t* state = data_16_bytes;
 
 	uint8_t round_num = Nr;
 
-	add_round_key(state, round_keys, &round_num, is_decrypt);
+	add_round_key(state, round_keys, &round_num, aes_op);
 
 	while(round_num > 0){
 
@@ -102,7 +106,7 @@ void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint8_t is_de
 			state[i] = apply_inv_sbox(state[i]);
 		}
 
-		add_round_key(state, round_keys, &round_num, is_decrypt);
+		add_round_key(state, round_keys, &round_num, aes_op);
 
 		inv_mix_col_words(state);
 
@@ -114,25 +118,30 @@ void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, uint8_t is_de
 		state[i] = apply_inv_sbox(state[i]);
 	}
 
-	add_round_key(state, round_keys, &round_num, is_decrypt);
+	add_round_key(state, round_keys, &round_num, aes_op);
 
 }
 
 
-uint8_t check_invalid_input(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, uint8_t is_decrypt){
+void check_invalid_input(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, aes_op_flag aes_op, aes_out* aes_out_ptr){
 
-	// Error code '1': pointer to 16 byte input is a null pointer
-	if(data_16_bytes == NULL) return 1;
+	if(data_16_bytes == NULL){
+		aes_out_ptr->termination_code = 1;
+		strcpy(aes_out_ptr->msg, "Pointer to input data is NULL.");
+	}
 
-	// Error code '2': cipher key has an invalid length (not 128, 192, 256)
-	if((cipher_key_len != 128) && (cipher_key_len != 192) && (cipher_key_len != 256)) return 2;
+	if((cipher_key_len != 128) && (cipher_key_len != 192) && (cipher_key_len != 256)){
+		aes_out_ptr->termination_code = 2;
+		strcpy(aes_out_ptr->msg, "Cipher key has an invalid length (not 128, 192, 256).");
+	}
 
-	// Error code '3': pointer to cipher key is a null pointer
-	if(cipher_key == NULL) return 3;
+	if(cipher_key == NULL){
+		aes_out_ptr->termination_code = 3;
+		strcpy(aes_out_ptr->msg, "Pointer to cipher key is NULL.");
+	}
 
-	// Error code '4': is_decrypt does not specify '0' (encryption) or '1' (decryption)
-	if((is_decrypt != 0) && (is_decrypt != 1)) return 4;
-
-	// If input is valid, return zero
-	return 0;
+	if((aes_op != encrypt) && (aes_op != decrypt)){
+		aes_out_ptr->termination_code = 4;
+		strcpy(aes_out_ptr->msg, "Specified operation is neither decryption nor encryption.");
+	}
 }

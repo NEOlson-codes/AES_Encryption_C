@@ -22,7 +22,7 @@
 
 // Function descriptions are in pre_cipher_utils.h
 
-uint8_t set_algo_params(uint32_t cipher_key_len, key_params param){
+uint8_t set_algo_params(cipher_len cipher_key_len, key_params param){
 
 	// Default to params for 256 bit cipher_key
 	uint8_t Nk = 8;

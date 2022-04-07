@@ -13,9 +13,6 @@
 
 #include <stdlib.h>
 #include <stdint.h>
-#include "s_box.h"
-#include "pre_cipher_utils.h"
-#include "cipher_utils.h"
 #include "aes_encryption.h"
 
 void test_s_box(void);
@@ -24,6 +21,7 @@ void test_generate_key_schedule(void);
 void test_encrypt_block(void);
 void test_decrypt_block(void);
 
+extern aes_out;
 
 int main(){
 
@@ -122,9 +120,10 @@ void test_encrypt_block(void){
 		0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f
 	};
 
-	uint32_t out;
-	out = use_aes(data, test_key_len, cipher_key_128, 0);
-	//printf("%x", cipher_key_128[15]);
+	aes_out out;
+	out = use_aes(data, test_key_len, cipher_key_128, encrypt);
+	printf("%d\n", out.termination_code);
+	printf("%s", out.msg);
 
 }
 
@@ -159,7 +158,7 @@ void test_decrypt_block(void){
 		0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f
 	};
 
-	use_aes(data_128, 128, cipher_key_128, 1);
+	use_aes(data_128, 128, cipher_key_128, decrypt);
 
 	// for(int i = 0; i < 16; i++) printf("0x%x ",state[i]);
 

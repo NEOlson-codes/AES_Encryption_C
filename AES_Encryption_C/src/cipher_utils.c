@@ -19,6 +19,8 @@
 
 #include "cipher_utils.h"
 
+
+
 // Translate 2D state matrix row/col to index of flat 16-bit array
 uint8_t get_idx_rc[ROWS_IN_STATE][COLS_IN_STATE] = {
 	{0, 4, 8, 12},
@@ -27,15 +29,15 @@ uint8_t get_idx_rc[ROWS_IN_STATE][COLS_IN_STATE] = {
 	{3, 7, 11, 15}
 };
 
-void add_round_key(uint8_t* state, uint8_t* round_key, uint8_t* round_num, uint8_t is_decrypt){
+void add_round_key(uint8_t* state, uint8_t* round_key, uint8_t* round_num, aes_op_flag aes_op){
 	for(uint8_t i = 0; i < BYTES_IN_STATE; i++){
 		state[i] ^= round_key[(BYTES_IN_STATE * (*round_num)) + i];
 	}
 
-	if (is_decrypt == 0){
+	if (aes_op == encrypt){
 		(*round_num)++; // '0' for encryption
 	}
-	else if (is_decrypt == 1){
+	else if (aes_op == decrypt){
 		(*round_num)--; // '1' for decryption
 	}
 }
