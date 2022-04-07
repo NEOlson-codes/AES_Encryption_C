@@ -21,7 +21,6 @@ void test_generate_key_schedule(void);
 void test_encrypt_block(void);
 void test_decrypt_block(void);
 
-extern aes_out;
 
 int main(){
 
@@ -64,9 +63,21 @@ void test_mult_by_x(void){
 void test_generate_key_schedule(void){
 
 	uint8_t cipher_key_len = 128;
+	uint8_t Nk, Nr;
 
-	const uint8_t Nk = set_algo_params(cipher_key_len, Nk_);
-	const uint8_t Nr = set_algo_params(cipher_key_len, Nr_);
+	switch (cipher_key_len){
+		case (128):
+			Nk = 4;
+			Nr = 10;
+			break;
+		case (192):
+			Nk = 6;
+			Nr = 12;
+			break;
+		default: // 256-bit key
+			Nk = 8;
+			Nr = 14;
+	}
 
 	uint8_t cipher_key_256[32] = {
 		0x60, 0x3d, 0xeb, 0x10, 0x15, 0xca, 0x71, 0xbe, 0x2b, 0x73, 0xae, 0xf0, 0x85, 0x7d, 0x77, 0x81,

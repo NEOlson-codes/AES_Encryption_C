@@ -15,7 +15,7 @@
 
 // The inputs to the s-box are the first and second 4-bit values of the byte
 // being transformed. Particularly, bits 0-3 are the column and 4-7 are the row.
-uint8_t s_box[16][16] = {
+const uint8_t s_box[16][16] = {
 
 //  0      1      2	     3      4      5      6      7      8      9      a      b      c      d      e      f
 {0x63 , 0x7c , 0x77 , 0x7b , 0xf2 , 0x6b , 0x6f , 0xc5 , 0x30 , 0x01 , 0x67 , 0x2b , 0xfe , 0xd7 , 0xab , 0x76}, //0
@@ -39,7 +39,7 @@ uint8_t s_box[16][16] = {
 
 
 // This is the inversion (to recover the original inputs) to the s_box shown above.
-uint8_t inv_s_box[16][16] = {
+const uint8_t inv_s_box[16][16] = {
 
 //  0      1      2	     3      4      5      6      7      8      9      a      b      c      d      e      f
 {0x52 , 0x09 , 0x6a , 0xd5 , 0x30 , 0x36 , 0xa5 , 0x38 , 0xbf , 0x40 , 0xa3 , 0x9e , 0x81 , 0xf3 , 0xd7 , 0xfb}, //0

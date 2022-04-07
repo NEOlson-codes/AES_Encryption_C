@@ -29,6 +29,11 @@ typedef struct aes_output_msg{
 	char msg[100];
 } aes_out;
 
+typedef struct cipher_parameters{
+	uint8_t Nk; // Number of 32-bit words
+	uint8_t Nr; // Number of rounds
+} params;
+
 typedef enum{key_128 = 128, key_192 = 192, key_256 = 256} cipher_len;
 
 typedef enum{encrypt, decrypt} aes_op_flag;
@@ -52,7 +57,7 @@ void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, aes_op_flag a
 void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, aes_op_flag aes_op, const uint8_t Nr);
 
 // Checks inputs to use_aes() to prevent null pointers and invalid numerical inputs
-void check_invalid_input(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, aes_op_flag aes_op, aes_out* aes_out_ptr);
+void check_invalid_input(uint8_t* data_16_bytes, uint8_t* cipher_key, aes_out* aes_out_ptr);
 
 
 #endif /* AES_ENCRYPTION_H_ */
