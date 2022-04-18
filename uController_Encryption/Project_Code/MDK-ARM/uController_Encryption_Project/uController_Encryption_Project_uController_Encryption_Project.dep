@@ -1,0 +1,853 @@
+Dependencies for Project 'uController_Encryption_Project', Target 'uController_Encryption_Project': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (..\Core\Src\test_functions.c)(0x625CB4E1)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\test_functions.o --omf_browse ucontroller_encryption_project\test_functions.crf --depend ucontroller_encryption_project\test_functions.d)
+I (../Core/Inc/test_functions.h)(0x625CB4B5)
+I (../Core/Inc/flash_manager.h)(0x6259D8BC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+I (../Core/Inc/main.h)(0x625CC763)
+I (../Core/Inc/encryption_wrapper.h)(0x6259D92C)
+I (..\..\..\AES_Encryption_C\src\aes_encryption.h)(0x6259D951)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60260474)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6026047C)
+I (..\..\..\AES_Encryption_C\src\s_box.h)(0x6259D8B1)
+I (..\..\..\AES_Encryption_C\src\pre_cipher_utils.h)(0x6259D89E)
+I (..\..\..\AES_Encryption_C\src\cipher_utils.h)(0x6259D93E)
+I (..\..\..\SHA_256_C\src\sha_256.h)(0x6259D894)
+I (..\..\..\SHA_256_C\src\pre_hash_funcs.h)(0x6259D8A8)
+I (..\..\..\SHA_256_C\src\math_funcs.h)(0x6259D887)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x60260478)
+I (..\..\..\SHA_256_C\src\hash_funcs.h)(0x6259D91B)
+I (../Core/Inc/LiquidCrystal.h)(0x625B86A9)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60260474)
+F (..\Core\Src\encryption_wrapper.c)(0x62599E1A)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\encryption_wrapper.o --omf_browse ucontroller_encryption_project\encryption_wrapper.crf --depend ucontroller_encryption_project\encryption_wrapper.d)
+I (../Core/Inc/encryption_wrapper.h)(0x6259D92C)
+I (..\..\..\AES_Encryption_C\src\aes_encryption.h)(0x6259D951)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60260474)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6026047C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6026047E)
+I (..\..\..\AES_Encryption_C\src\s_box.h)(0x6259D8B1)
+I (..\..\..\AES_Encryption_C\src\pre_cipher_utils.h)(0x6259D89E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (..\..\..\AES_Encryption_C\src\cipher_utils.h)(0x6259D93E)
+I (..\..\..\SHA_256_C\src\sha_256.h)(0x6259D894)
+I (..\..\..\SHA_256_C\src\pre_hash_funcs.h)(0x6259D8A8)
+I (..\..\..\SHA_256_C\src\math_funcs.h)(0x6259D887)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x60260478)
+I (..\..\..\SHA_256_C\src\hash_funcs.h)(0x6259D91B)
+I (../Core/Inc/flash_manager.h)(0x6259D8BC)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (..\Core\Src\flash_manager.c)(0x6258CAC9)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\flash_manager.o --omf_browse ucontroller_encryption_project\flash_manager.crf --depend ucontroller_encryption_project\flash_manager.d)
+I (../Core/Inc/flash_manager.h)(0x6259D8BC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (..\Core\Src\LiquidCrystal.c)(0x625BA456)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\liquidcrystal.o --omf_browse ucontroller_encryption_project\liquidcrystal.crf --depend ucontroller_encryption_project\liquidcrystal.d)
+I (../Core/Inc/LiquidCrystal.h)(0x625B86A9)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60260474)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (..\Core\Src\ui_control_handler.c)(0x625C791E)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\ui_control_handler.o --omf_browse ucontroller_encryption_project\ui_control_handler.crf --depend ucontroller_encryption_project\ui_control_handler.d)
+I (../Core/Inc/ui_control_handler.h)(0x625CABDD)
+F (../Core/Src/main.c)(0x625CC972)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\main.o --omf_browse ucontroller_encryption_project\main.crf --depend ucontroller_encryption_project\main.d)
+I (../Core/Inc/main.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+I (../Core/Inc/flash_manager.h)(0x6259D8BC)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6026047E)
+I (../Core/Inc/test_functions.h)(0x625CB4B5)
+I (../Core/Inc/encryption_wrapper.h)(0x6259D92C)
+I (..\..\..\AES_Encryption_C\src\aes_encryption.h)(0x6259D951)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60260474)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6026047C)
+I (..\..\..\AES_Encryption_C\src\s_box.h)(0x6259D8B1)
+I (..\..\..\AES_Encryption_C\src\pre_cipher_utils.h)(0x6259D89E)
+I (..\..\..\AES_Encryption_C\src\cipher_utils.h)(0x6259D93E)
+I (..\..\..\SHA_256_C\src\sha_256.h)(0x6259D894)
+I (..\..\..\SHA_256_C\src\pre_hash_funcs.h)(0x6259D8A8)
+I (..\..\..\SHA_256_C\src\math_funcs.h)(0x6259D887)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x60260478)
+I (..\..\..\SHA_256_C\src\hash_funcs.h)(0x6259D91B)
+I (../Core/Inc/LiquidCrystal.h)(0x625B86A9)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60260474)
+F (../Core/Src/stm32f4xx_it.c)(0x625CC762)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_it.o --omf_browse ucontroller_encryption_project\stm32f4xx_it.crf --depend ucontroller_encryption_project\stm32f4xx_it.d)
+I (../Core/Inc/main.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+I (../Core/Inc/flash_manager.h)(0x6259D8BC)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6026047E)
+I (../Core/Inc/test_functions.h)(0x625CB4B5)
+I (../Core/Inc/encryption_wrapper.h)(0x6259D92C)
+I (..\..\..\AES_Encryption_C\src\aes_encryption.h)(0x6259D951)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60260474)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6026047C)
+I (..\..\..\AES_Encryption_C\src\s_box.h)(0x6259D8B1)
+I (..\..\..\AES_Encryption_C\src\pre_cipher_utils.h)(0x6259D89E)
+I (..\..\..\AES_Encryption_C\src\cipher_utils.h)(0x6259D93E)
+I (..\..\..\SHA_256_C\src\sha_256.h)(0x6259D894)
+I (..\..\..\SHA_256_C\src\pre_hash_funcs.h)(0x6259D8A8)
+I (..\..\..\SHA_256_C\src\math_funcs.h)(0x6259D887)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x60260478)
+I (..\..\..\SHA_256_C\src\hash_funcs.h)(0x6259D91B)
+I (../Core/Inc/LiquidCrystal.h)(0x625B86A9)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60260474)
+I (../Core/Inc/stm32f4xx_it.h)(0x625CC762)
+F (../Core/Src/stm32f4xx_hal_msp.c)(0x625CC763)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_msp.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_msp.crf --depend ucontroller_encryption_project\stm32f4xx_hal_msp.d)
+I (../Core/Inc/main.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+I (../Core/Inc/flash_manager.h)(0x6259D8BC)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6026047E)
+I (../Core/Inc/test_functions.h)(0x625CB4B5)
+I (../Core/Inc/encryption_wrapper.h)(0x6259D92C)
+I (..\..\..\AES_Encryption_C\src\aes_encryption.h)(0x6259D951)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60260474)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6026047C)
+I (..\..\..\AES_Encryption_C\src\s_box.h)(0x6259D8B1)
+I (..\..\..\AES_Encryption_C\src\pre_cipher_utils.h)(0x6259D89E)
+I (..\..\..\AES_Encryption_C\src\cipher_utils.h)(0x6259D93E)
+I (..\..\..\SHA_256_C\src\sha_256.h)(0x6259D894)
+I (..\..\..\SHA_256_C\src\pre_hash_funcs.h)(0x6259D8A8)
+I (..\..\..\SHA_256_C\src\math_funcs.h)(0x6259D887)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x60260478)
+I (..\..\..\SHA_256_C\src\hash_funcs.h)(0x6259D91B)
+I (../Core/Inc/LiquidCrystal.h)(0x625B86A9)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60260474)
+F (..\..\..\AES_Encryption_C\src\aes_encryption.c)(0x624E73E4)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\aes_encryption.o --omf_browse ucontroller_encryption_project\aes_encryption.crf --depend ucontroller_encryption_project\aes_encryption.d)
+I (..\..\..\AES_Encryption_C\src\aes_encryption.h)(0x6259D951)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60260474)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6026047C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6026047E)
+I (..\..\..\AES_Encryption_C\src\s_box.h)(0x6259D8B1)
+I (..\..\..\AES_Encryption_C\src\pre_cipher_utils.h)(0x6259D89E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (..\..\..\AES_Encryption_C\src\cipher_utils.h)(0x6259D93E)
+F (..\..\..\AES_Encryption_C\src\cipher_utils.c)(0x624E404D)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\cipher_utils.o --omf_browse ucontroller_encryption_project\cipher_utils.crf --depend ucontroller_encryption_project\cipher_utils.d)
+I (..\..\..\AES_Encryption_C\src\cipher_utils.h)(0x6259D93E)
+I (..\..\..\AES_Encryption_C\src\aes_encryption.h)(0x6259D951)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60260474)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6026047C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6026047E)
+I (..\..\..\AES_Encryption_C\src\s_box.h)(0x6259D8B1)
+I (..\..\..\AES_Encryption_C\src\pre_cipher_utils.h)(0x6259D89E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+F (..\..\..\AES_Encryption_C\src\pre_cipher_utils.c)(0x624E6F1B)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\pre_cipher_utils.o --omf_browse ucontroller_encryption_project\pre_cipher_utils.crf --depend ucontroller_encryption_project\pre_cipher_utils.d)
+I (..\..\..\AES_Encryption_C\src\pre_cipher_utils.h)(0x6259D89E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (..\..\..\AES_Encryption_C\src\s_box.h)(0x6259D8B1)
+I (..\..\..\AES_Encryption_C\src\aes_encryption.h)(0x6259D951)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60260474)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6026047C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6026047E)
+I (..\..\..\AES_Encryption_C\src\cipher_utils.h)(0x6259D93E)
+F (..\..\..\AES_Encryption_C\src\s_box.c)(0x624E7256)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\s_box.o --omf_browse ucontroller_encryption_project\s_box.crf --depend ucontroller_encryption_project\s_box.d)
+I (..\..\..\AES_Encryption_C\src\s_box.h)(0x6259D8B1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (..\..\..\AES_Encryption_C\src\aes_encryption.h)(0x6259D951)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60260474)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6026047C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6026047E)
+I (..\..\..\AES_Encryption_C\src\pre_cipher_utils.h)(0x6259D89E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (..\..\..\AES_Encryption_C\src\cipher_utils.h)(0x6259D93E)
+F (..\..\..\SHA_256_C\src\hash_funcs.c)(0x621C09FF)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\hash_funcs.o --omf_browse ucontroller_encryption_project\hash_funcs.crf --depend ucontroller_encryption_project\hash_funcs.d)
+I (..\..\..\SHA_256_C\src\pre_hash_funcs.h)(0x6259D8A8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (..\..\..\SHA_256_C\src\math_funcs.h)(0x6259D887)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x60260478)
+F (..\..\..\SHA_256_C\src\math_funcs.c)(0x621C0A94)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\math_funcs.o --omf_browse ucontroller_encryption_project\math_funcs.crf --depend ucontroller_encryption_project\math_funcs.d)
+I (..\..\..\SHA_256_C\src\math_funcs.h)(0x6259D887)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x60260478)
+F (..\..\..\SHA_256_C\src\pre_hash_funcs.c)(0x621C0B14)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\pre_hash_funcs.o --omf_browse ucontroller_encryption_project\pre_hash_funcs.crf --depend ucontroller_encryption_project\pre_hash_funcs.d)
+I (..\..\..\SHA_256_C\src\pre_hash_funcs.h)(0x6259D8A8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+F (..\..\..\SHA_256_C\src\sha_256.c)(0x62474763)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\sha_256.o --omf_browse ucontroller_encryption_project\sha_256.crf --depend ucontroller_encryption_project\sha_256.d)
+I (..\..\..\SHA_256_C\src\sha_256.h)(0x6259D894)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60260474)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (..\..\..\SHA_256_C\src\pre_hash_funcs.h)(0x6259D8A8)
+I (..\..\..\SHA_256_C\src\math_funcs.h)(0x6259D887)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x60260478)
+I (..\..\..\SHA_256_C\src\hash_funcs.h)(0x6259D91B)
+F (startup_stm32f407xx.s)(0x625CC769)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F407xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f407xx.lst --xref -o ucontroller_encryption_project\startup_stm32f407xx.o --depend ucontroller_encryption_project\startup_stm32f407xx.d)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c)(0x61E20B50)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_spi.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_spi.crf --depend ucontroller_encryption_project\stm32f4xx_hal_spi.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c)(0x61E20B50)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_rcc.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_rcc.crf --depend ucontroller_encryption_project\stm32f4xx_hal_rcc.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c)(0x61E20B50)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_rcc_ex.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_rcc_ex.crf --depend ucontroller_encryption_project\stm32f4xx_hal_rcc_ex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c)(0x61E20B50)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_flash.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_flash.crf --depend ucontroller_encryption_project\stm32f4xx_hal_flash.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c)(0x61E20B50)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_flash_ex.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_flash_ex.crf --depend ucontroller_encryption_project\stm32f4xx_hal_flash_ex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c)(0x61E20B50)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_flash_ramfunc.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_flash_ramfunc.crf --depend ucontroller_encryption_project\stm32f4xx_hal_flash_ramfunc.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c)(0x61E20B50)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_gpio.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_gpio.crf --depend ucontroller_encryption_project\stm32f4xx_hal_gpio.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c)(0x61E20B4F)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_dma_ex.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_dma_ex.crf --depend ucontroller_encryption_project\stm32f4xx_hal_dma_ex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c)(0x61E20B4F)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_dma.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_dma.crf --depend ucontroller_encryption_project\stm32f4xx_hal_dma.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c)(0x61E20B50)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_pwr.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_pwr.crf --depend ucontroller_encryption_project\stm32f4xx_hal_pwr.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c)(0x61E20B50)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_pwr_ex.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_pwr_ex.crf --depend ucontroller_encryption_project\stm32f4xx_hal_pwr_ex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c)(0x61E20B4F)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_cortex.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_cortex.crf --depend ucontroller_encryption_project\stm32f4xx_hal_cortex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c)(0x61E20B4F)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal.crf --depend ucontroller_encryption_project\stm32f4xx_hal.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c)(0x61E20B4F)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_exti.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_exti.crf --depend ucontroller_encryption_project\stm32f4xx_hal_exti.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c)(0x61E20B50)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_tim.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_tim.crf --depend ucontroller_encryption_project\stm32f4xx_hal_tim.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c)(0x61E20B50)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\stm32f4xx_hal_tim_ex.o --omf_browse ucontroller_encryption_project\stm32f4xx_hal_tim_ex.crf --depend ucontroller_encryption_project\stm32f4xx_hal_tim_ex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)
+F (../Core/Src/system_stm32f4xx.c)(0x61E20B4F)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\AES_Encryption_C\src -I ..\..\..\SHA_256_C\src -I ..\Core\Flash-I.\RTE\_uController_Encryption_Project-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Hephaestus\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o ucontroller_encryption_project\system_stm32f4xx.o --omf_browse ucontroller_encryption_project\system_stm32f4xx.crf --depend ucontroller_encryption_project\system_stm32f4xx.d)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61E20B4E)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61E209A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61E209A5)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61E209A5)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61E20B4F)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x625CC763)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61E20B4F)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6026047E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61E20B4F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x61E20B4F)

@@ -21,6 +21,11 @@
 #ifndef PRE_CIPHER_UTILS_H_
 #define PRE_CIPHER_UTILS_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+
 #include <stdint.h>
 #include "stddef.h"
 #include "s_box.h"
@@ -52,5 +57,9 @@ uint8_t set_algo_params(uint32_t cipher_key_len, key_params param);
  */
 uint8_t* generate_key_schedule(uint8_t* cipher_key, const uint8_t Nr, const uint8_t Nk);
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* PRE_CIPHER_UTILS_H_ */

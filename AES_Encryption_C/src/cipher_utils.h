@@ -10,9 +10,13 @@
  */
 
 
-
 #ifndef CIPHER_UTILS_H_
 #define CIPHER_UTILS_H_
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
 
 #include "aes_encryption.h"
 
@@ -51,5 +55,9 @@ uint8_t mult_by_x(uint8_t byte, uint8_t num_multiplications);
  */
 uint8_t mult_by_x_expansion(uint8_t expansion_hex, uint8_t byte);
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* CIPHER_UTILS_H_ */

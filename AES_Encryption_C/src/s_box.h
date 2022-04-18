@@ -14,11 +14,16 @@
 #ifndef S_BOX_H_
 #define S_BOX_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+
 #include <stdint.h>
 #include "aes_encryption.h"
 
-extern uint8_t s_box[16][16];
-extern uint8_t inv_s_box[16][16];
+extern const uint8_t s_box[16][16];
+extern const uint8_t inv_s_box[16][16];
 
 /*
  * Purpose : Exchanges a byte's value with its corresponding value in the
@@ -35,6 +40,11 @@ uint8_t apply_sbox(uint8_t byte);
  * Outputs : 1 byte that was originally transformed by the s-box
  */
 uint8_t apply_inv_sbox(uint8_t byte);
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* S_BOX_H_ */
 

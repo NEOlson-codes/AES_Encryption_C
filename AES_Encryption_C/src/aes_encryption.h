@@ -19,6 +19,11 @@
 #ifndef AES_ENCRYPTION_H_
 #define AES_ENCRYPTION_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdint.h>
@@ -50,7 +55,7 @@ typedef enum{encrypt, decrypt} aes_op_flag;
 #define  ROWS_IN_STATE	 4
 
 
-aes_out use_aes(uint8_t* data_16_bytes, uint32_t cipher_key_len, uint8_t* cipher_key, aes_op_flag aes_op);
+aes_out use_aes(uint8_t* data_16_bytes, cipher_len cipher_key_len, uint8_t* cipher_key, aes_op_flag aes_op);
 
 void encrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, aes_op_flag aes_op, const uint8_t Nr);
 
@@ -59,5 +64,9 @@ void decrypt_16_bytes(uint8_t* data_16_bytes, uint8_t* round_keys, aes_op_flag a
 // Checks inputs to use_aes() to prevent null pointers and invalid numerical inputs
 void check_invalid_input(uint8_t* data_16_bytes, uint8_t* cipher_key, aes_out* aes_out_ptr);
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* AES_ENCRYPTION_H_ */
