@@ -17,7 +17,7 @@
 
 
 uint32_t add_w_mod(uint32_t num1, uint32_t num2){
-	// Addition may overflow. Set temp to >32 bits
+
 	uint64_t temp;
 	temp = num1 + num2;
 	// If the result of the addition is > 2^32

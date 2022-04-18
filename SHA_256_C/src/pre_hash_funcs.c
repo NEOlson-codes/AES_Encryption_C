@@ -15,10 +15,7 @@
 
 uint32_t* pad_msg(uint64_t words_of_padding, uint64_t msg_len_words){
 
-	// At maximum, there will be 18 words in the padding array.  Must have a constant
-	// number of elements to be declared static.
-	static uint32_t padding_array[18] = {0};
-	// If padding is required, the minimum number of padding words will be 3
+	static uint32_t padding_array[ZERO_PAD_MAX_LEN] = {0};
 
 	// Put a '1' immediately after the message
 	padding_array[0] = 0x80000000;
@@ -26,7 +23,7 @@ uint32_t* pad_msg(uint64_t words_of_padding, uint64_t msg_len_words){
 	uint64_t total_msg_bits = msg_len_words * 32 ;
 
 	// Put the message length in bytes in the last two words
-	padding_array[words_of_padding - 2] = (total_msg_bits >> 32);
+	padding_array[words_of_padding - 2] = (total_msg_bits >> BITS_IN_WORD);
 	padding_array[words_of_padding - 1] = (total_msg_bits & 0x00000000FFFFFFFF);
 
 	return padding_array;

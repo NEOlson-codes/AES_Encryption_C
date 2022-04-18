@@ -14,9 +14,18 @@
 #ifndef PRE_HASH_FUNCS_H_
 #define PRE_HASH_FUNCS_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+#include "sha_256.h"
 #include <stdint.h>
 
 uint32_t* pad_msg(uint64_t words_of_padding, uint64_t msg_len_words);
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* PRE_HASH_FUNCS_H_ */
