@@ -5,7 +5,5 @@ Project: Use the AES-256 algorithm to store encrypted messages in STM32 flash. P
 
 Expansions: The first iteration of the project is as described above. However, I would like to use it as
          a starting place for exploring some other aspects of the STM32, such as internal memory protection. 
-         Potential add on features: 
-         - Reading from and writing to SD card
-         - Read/write from/to PC
-         - Augment protection of stored data using any chip-specific functions
+         Potential add on features: reading from and writing to SD card, read/write from/to PC, augment protection 
+         of stored data using any chip-specific functions
